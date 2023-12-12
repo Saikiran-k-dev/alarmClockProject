@@ -1,9 +1,9 @@
 
 
 var sound = new Audio("https://www.freespecialeffects.co.uk/soundfx/animals/duck1.wav");
-		sound.loop = true;
-
+		sound.loop = true
 var h2 = document.getElementById('clock');
+var bodyBorderColor = document.getElementsByTagName("body")[0];
 
 // display current time by the second
 var currentTime = setInterval(function(){
@@ -141,6 +141,8 @@ setInterval(function(){
 
 	if (alarmTime == currentTime) {
 		sound.play();
+        bodyBorderColor.style.border="8px solid red"
+        
 		}
 
 },1000);
@@ -158,6 +160,7 @@ function alarmClear() {
 	document.getElementById('alarmsecs').disabled = false;
 	document.getElementById('ampm').disabled = false;
 	sound.pause();
+    bodyBorderColor.style.border="8px solid lightgreen"
 }
 
 
